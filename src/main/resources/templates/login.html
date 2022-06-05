@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../style/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="table">
+        <div class="container">
+            <h1>Bem-vindo!</h1>
+            <form th:object="${pessoa}" method="POST" th:action="@{/authentication}">
+                <div class="form_div">
+                    <label for="email" class="form">Email: </label>
+                    <input type="email" th:field="*{email}" id="email" required>
+            
+                </div>
+                <div class="form_div">
+                    <label for="senha" class="form">Senha: </label>
+                    <input type="password" th:field="*{senha}" id="senha" required>
+                </div>
+            
+                <button type="submit" >enviar</button>
+                <button type="reset" >limpar</button>
+            </form>
+            <div class="link"><a href="/cadastro">Não tem cadastro?</a></div>
+        </div>
+        <div class="column2"></div>
+        
+       
+    </div>
+
+
+
+</body>
+</html>

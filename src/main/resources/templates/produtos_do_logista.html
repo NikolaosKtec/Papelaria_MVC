@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Logista</title>
+</head>
+<body>
+<h1>Lista de produtos</h1>
+<table>
+    <tr>
+        <th>Produto</th>
+        <th>Desc</th>
+        <th>Preco</th>
+        <th>Quantidade</th>
+        <th>Remover produto</th>
+    </tr>
+    <tr th:each="p : ${produtosL}" th:object="${p}">
+        <td th:text="*{nome}" ></td>
+
+
+        <td th:text="*{descricao}" ></td>
+
+
+        <td th:text="*{preco}" ></td>
+
+
+        <td th:text="*{quantidade}" ></td>
+
+        <td><a  th:method="post" th:href="@{'/remove_p?id='+ *{id}}">Remover</a></td>
+        <!--th:href="@{'/editar/'+ *{id}}"-->
+    </tr>
+</table>
+
+<a  href="/cadastro_produtos" >Cadastrar produtos</a>
+</body>
+</html>
