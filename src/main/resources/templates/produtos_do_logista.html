@@ -3,34 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Logista</title>
+    <link th:href="@{/style/style.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>Lista de produtos</h1>
-<table>
-    <tr>
-        <th>Produto</th>
-        <th>Desc</th>
-        <th>Preco</th>
-        <th>Quantidade</th>
-        <th>Remover produto</th>
-    </tr>
-    <tr th:each="p : ${produtosL}" th:object="${p}">
-        <td th:text="*{nome}" ></td>
-
-
-        <td th:text="*{descricao}" ></td>
-
-
-        <td th:text="*{preco}" ></td>
-
-
-        <td th:text="*{quantidade}" ></td>
-
-        <td><a  th:method="post" th:href="@{'/remove_p?id='+ *{id}}">Remover</a></td>
-        <!--th:href="@{'/editar/'+ *{id}}"-->
-    </tr>
-</table>
-
-<a  href="/cadastro_produtos" >Cadastrar produtos</a>
+<h1 style="color: antiquewhite">Lista de produtos</h1>
+<div class="table produto">
+    <div class="container">
+        <table>
+            <tr>
+                <th>Produto</th>
+                <th>Desc</th>
+                <th>Preço</th>
+                <th>Qtd</th>
+                <th>Remover</th>
+            </tr>
+            <tr th:each="p : ${produtosL}" th:object="${p}">
+                <td th:text="*{nome}" >teste</td>
+        
+        
+                <td th:text="*{descricao}" >texto muiiiito grannde</td>
+        
+        
+                <td th:text="*{preco}" >teste</td>
+        
+        
+                <td th:text="*{quantidade}" >teste</td>
+        
+                <td><a th:method="post" th:href="@{'/remove_p?id='+ *{id}}"> <img class="pp" th:src="@{/style/rem_icon.png}" /></a>
+                </td>
+                <!--th:href="@{'/editar/'+ *{id}}"-->
+            </tr>
+        </table>
+        
+        <a  href="/cadastro_produtos" ><img class="pp" th:src="@{/style/14_Add-512.webp}" ></a>
+        
+    </div>
+    <div class="column2"></div>
+</div>
 </body>
 </html>

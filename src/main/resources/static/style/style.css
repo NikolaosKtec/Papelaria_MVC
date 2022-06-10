@@ -1,5 +1,6 @@
 html{
     background-color: black;
+    text-align: center;
 }
 div.table{
     display: grid;
@@ -9,6 +10,9 @@ div.table{
     font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
 }
+div.table.produto{
+    grid-template-columns: 4fr;
+}
 
 div.container{
     background-image:url(1920xblue_bk.webp);
@@ -17,7 +21,7 @@ div.container{
     flex-basis: content;
     flex-direction: column;
     border: 7px solid antiquewhite;
-    
+    text-align: inherit;
     
 }
 div.column2{
@@ -77,6 +81,13 @@ a:visited{
     color: blueviolet;
 }
 
+td{
+    border: 5px outset antiquewhite;
+}
+
+img.pp{
+    max-width: 35px;
+}
 @media (max-width:650px){
     div.table{
         grid-template-columns: 1fr;
